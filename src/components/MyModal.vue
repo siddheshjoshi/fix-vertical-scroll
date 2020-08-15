@@ -3,21 +3,14 @@
     <div>
       <div class="pl-2 pt-2">
         <span style="font-size: 20px">Some Title</span>
-        <span
-          class="float-right pr-3"
-          style="cursor:pointer;"
-          @click="$emit('close')"
-        >
+        <span class="float-right pr-3" style="cursor:pointer;" @click="$emit('close')">
           <strong>x</strong>
         </span>
       </div>
     </div>
 
     <div class="row pt-5 scaled-images">
-      <div
-        v-for="index in 5"
-        :key="index"
-      >
+      <div v-for="index in 5" :key="index">
         <div class="col-md-5 col-12 mb-5">
           <img src="https://source.unsplash.com/random/2X2">
         </div>
