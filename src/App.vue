@@ -1,19 +1,36 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <button
+      class="btn btn-primary"
+      @click="openModal()"
+    >click me</button>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import MyModalVue from "./components/MyModal.vue";
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
-}
+  name: "App",
+  components: {},
+  methods: {
+    openModal() {
+      this.$modal.show(
+        MyModalVue,
+        {},
+        {
+          adaptive: true,
+          height: "85%",
+          width: "85%",
+        },
+        {
+          closed: () => {
+            console.log("closed");
+          },
+        }
+      );
+    },
+  },
+};
 </script>
 
 <style>
